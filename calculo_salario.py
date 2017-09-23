@@ -1,9 +1,15 @@
-# Escribe un programa para pedirle al usuario el numero de horas y
-# la tarifa por hora para calcular el salario bruto.
+# Reescribe el programa del calculo del salario para darle al empleado
+# 1.5 veces la tarifa horaria para todas las horas trabajadas que excedan de 40.
 
 num_horas = float(raw_input('Ingrese las horas trabajas>>> '))
 tarifa_horas = float(raw_input('Ingrese el costo de la hora trabajada>>> '))
 
-salario_neto = num_horas * tarifa_horas
-
-print 'El salario neto a cobrar es:',salario_neto
+if num_horas > 40:
+	horas_extra =num_horas -40
+	tarifa_horas_extra = (tarifa_horas * 1.5) * horas_extra
+	salario = 40 * tarifa_horas
+	salario_neto = salario + tarifa_horas_extra
+	print 'El salario a cobrar es>>>', salario_neto
+else:
+	salario_neto = num_horas * tarifa_horas
+	print 'El salario neto a cobrar es:',salario_neto
